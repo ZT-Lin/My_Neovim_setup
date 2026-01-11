@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+local opts = {noremap = false, silent = true}
+
 -- 窗口模式
 keymap.set("n", "<leader>sv", "<C-w>v") 
 	-- 水平新增窗口 
@@ -23,6 +25,18 @@ keymap.set("n", "<S-H>", ":bprevious<CR>")
 	--上一个buffer窗口
 keymap.set("n", "<leader>x", ":bdelete<CR>")
 	--关闭当前bufer窗口
+
+--Telescope 文件模糊查找
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+	--查找文件
+keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+	--查找字符内容
+keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
+	--查找历史文件
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+	--查找当前文件
+keymap.set("n", "<leader>cc", "<cmd>Telescope colorscheme<CR>", opts)
+		--更改当前主题
 
 -- 视觉模式
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")

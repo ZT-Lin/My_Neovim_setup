@@ -10,6 +10,7 @@ require("plugins-config.nvim-tree")			--文件树
 require("plugins-config.treesitter")		--高亮
 require("plugins-config.toggleterm")		--打开终端
 require("plugins-config.smear-cursor")	--丝滑光标
+require("plugins-config.telescope")			--查找功能
 
 --LSP
 require("lsp.lsp")
